@@ -7,13 +7,10 @@ import com.sepatuku.services.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("auth")
 public class AuthController {
     AuthService authService;
 
@@ -22,13 +19,18 @@ public class AuthController {
         this.authService = authService;
     }
 
-    @PostMapping("/login")
-    public ResponseEntity<MessageResponseDto> login(@RequestBody LoginRequestDto loginRequestDto){
-        return ResponseEntity.ok(authService.login(loginRequestDto));
+    @PostMapping("signin")
+    public ResponseEntity<MessageResponseDto> signin(@RequestBody LoginRequestDto loginRequestDto){
+        return ResponseEntity.ok(authService.signin(loginRequestDto));
     }
 
-    @PostMapping("/register")
-    public ResponseEntity<MessageResponseDto> register(@RequestBody RegisterRequestDto registerRequestDto){
-        return ResponseEntity.status(HttpStatus.CREATED).body(authService.register(registerRequestDto));
+    @PostMapping("signup")
+    public ResponseEntity<MessageResponseDto> signup(@RequestBody RegisterRequestDto registerRequestDto){
+        return ResponseEntity.status(HttpStatus.CREATED).body(authService.signup(registerRequestDto));
     }
+
+//    @PostMapping("signout")
+//    public ResponseEntity<MessageResponseDto> signout(@RequestBody RegisterRequestDto registerRequestDto){
+//        return ResponseEntity.status(HttpStatus.CREATED).body(authService.register(registerRequestDto));
+//    }
 }

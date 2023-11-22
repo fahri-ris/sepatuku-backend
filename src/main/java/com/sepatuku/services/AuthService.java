@@ -5,6 +5,6 @@ import com.sepatuku.dtos.auth.LoginRequestDto;
 import com.sepatuku.dtos.auth.RegisterRequestDto;
 
 public interface AuthService {
-    MessageResponseDto login(LoginRequestDto loginRequestDto);
-    MessageResponseDto register(RegisterRequestDto registerRequestDto);
+    MessageResponseDto signin(LoginRequestDto loginRequestDto);
+    MessageResponseDto signup(RegisterRequestDto registerRequestDto);
 }
