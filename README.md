@@ -1,2 +1,2 @@
 # sepatuku-backend
-Ecommerce backend application about shoes store
+Ecommerce backend application (Shoes Store)
