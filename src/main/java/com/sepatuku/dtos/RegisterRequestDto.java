@@ -1,4 +1,4 @@
-package com.sepatuku.dtos.auth;
+package com.sepatuku.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class LoginRequestDto {
+public class RegisterRequestDto {
+    private String username;
     private String email;
     private String password;
 }
